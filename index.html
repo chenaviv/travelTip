@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600" rel="stylesheet" />
+    <link rel="stylesheet" href="vendor/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>TravelTip</title>
+</head>
+<body>
+    
+    <main>
+        <header>
+            <h1>TravelTip</h1>
+        </header>
+    
+        <section class="search">
+            <div class="box">
+                <input type="text" placeholder="Search for location"
+                onfocus="toggleSearchBoxFocus(this.parentNode, true, this)" onblur="toggleSearchBoxFocus(this.parentNode)" />
+                <button class="not-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>                
+                </button>
+            </div>
+        </section>
+
+        <section class="map-buttons">
+            <button class="not-btn" onclick="handleCurrentLocation()" title="Mark current location">
+                    <i class="fa fa-location-arrow fa-rotate-180" aria-hidden="true"></i>                    
+            </button>
+            <button class="not-btn" onclick="copyUrl()" title="Copy URL for currently marked location">
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>                    
+            </button>
+        </section>
+
+        <section class="map"></section>
+
+        <section class="location-name">
+            <h3 class="name"></h3>
+        </section>
+
+        <section class="weather"></section>
+
+    </main>
+
+    <input type="text" class="url-copy" />
+
+
+
+<script src="js/main.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCtxbjhQQ_q5GZejP-k6U2CCi-6x460AnY&callback=initMap">
+</script>
+</body>
+</html>
