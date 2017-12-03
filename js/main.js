@@ -150,7 +150,7 @@ function fetchLocationName(coords) {
         
 function fetchLocationWeather(coords) {
     return fetch(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&units=metric&APPID=${API_KEY_WEATHER}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lng}&units=metric&APPID=${API_KEY_WEATHER}`
     ).then(res => res.json())
     .then(weather => {
         if (weather.cod === 200) return weather;
